@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="myfirstangularapp">
+
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS - Money</title>
+	<link data-require="bootstrap@*" data-semver="3.3.2" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script data-require="bootstrap@*" data-semver="3.3.2" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- 	<script>
+		document.write('<base href="' = document.location + '" />');
+	</script> -->
+	<!-- <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.0/angular.js" data-semver="1.4.0-rc.0"></script>
+	<script data-require="jquery@2.1.3" data-semver="2.1.3" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+ -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+	<div class="container">
+		<div ng-controller="MyFirstController">
+			<p class="text-muted">
+			1.Lower case filter:</p>
+			<p class="text-info">First Name : {{data.firstName | lowercase}}</p>
+			<hr />
+			<p class="text-muted">
+			2.Upper case filter:</p>
+			<p class="text-info">First Name : {{data.firstName | uppercase}}</p>
+			<hr />
+			<p class="text-muted">
+			3.Data filter: (mm)</p>
+			<p class="text-info">Start Month : {{data.startDate | date:'MM'}}</p>
+			<hr />
+			<p class="text-muted">
+			4. Custom filter to remove all spaces:</p>
+			<p class="text-info">{{data.dashes | removeAllSpaces}}</p>
+			<hr />
+			<div>
+				<img ng-src="{{getGravatar(data.email)}}" />
+			</div>
+			<hr/>
+			<div>
+				<my-input/>
+				<label>github return code:
+					<h4 ng-bind="status"></h4>
+				</label>
+			</div>
+			<div>
+				<pre>{{user | json}}</pre>
+				{{error}}
+			</div>
+		</div>
+	</div>
+	  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/controllers.js"></script>
+<!-- 	<script src="data.js"></script> -->
+	<script src="app/filters/filters.js"></script>
+	<script src="app/services/services.js"></script>
+	<script src="app/directives/directives.js"></script>
+</body>
+
+<!--     <h1>Hello AngularJS!</h1>
+    <p>Under Angular control: </p>
+    <div ng-app>
+        {{ 'Hello ' + 'AngularJS!' }}
+        <br/>
+        <p style="padding-left: 30px;"/><label>Hello: </label>
+        <input ng-model="hello1"="text" />
+        <p>{{hello1}}</p>
+        <br/>
+        <label>Hello: </label>
+        <input ng-model="hello" type="text" />
+        <p>{{hello}}</p>
+    </div>
+    <br/>
+    <p> <b>Not</b> under angular control </p>
+    <div>
+        {{ 'Hello' + 'AngularJS!' }}
+    </div>
+</body> -->
+
+</html>
